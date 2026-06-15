@@ -39,4 +39,10 @@ jobs:
       - name: Test Coverage
         run: |
           export PYTHONPATH=$PYTHONPATH:.
-          pytest --cov=gendiff tests/test_gendiff.py
+          pytest --cov=gendiff --cov-report=xml tests/test_gendiff.py
+
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
