@@ -1,0 +1,7 @@
+{
+  + added: new
+  - changed: old
+  + changed: new
+  common: value
+  - removed: gone
+}
