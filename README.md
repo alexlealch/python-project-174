@@ -1,9 +1,9 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/alexlealch/python-project-174/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/alexlealch/python-project-174/actions)
 
-# Gendiff - JSON Difference Finder
+# Gendiff - Configuration File Difference Finder
 
-Gendiff is a CLI tool that compares two JSON configuration files and displays the differences in a clear, human-readable format.
+Gendiff is a CLI tool that compares two configuration files (JSON or YAML) and displays the differences in a clear, human-readable format.
 
 ## Installation
 
@@ -17,6 +17,8 @@ pip install .
 Run the tool from the terminal:
 ```bash
 python -m gendiff.scripts.gendiff file1.json file2.json
+python -m gendiff.scripts.gendiff file1.yaml file2.yaml
+python -m gendiff.scripts.gendiff file1.yml file2.yml
 ```
 
 ### Library
