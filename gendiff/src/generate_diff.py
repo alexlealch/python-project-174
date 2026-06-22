@@ -1,28 +1,27 @@
-from .parsers import load_file, _stringify
+from .parsers import load_file
+from .core_differ import calculate_diff
+from .formatters import stylish_format
 
-def generate_diff(path1, path2):
+def generate_diff(path1, path2, format_name='stylish'):
+    """
+    Generates the difference between two configuration files.
+    
+    Args:
+        path1: Path to first file
+        path2: Path to second file
+        format_name: Output format (default: 'stylish')
+    
+    Returns:
+        Formatted string representing the differences
+    """
     data1 = load_file(path1)
     data2 = load_file(path2)
-
-    keys1 = set(data1.keys())
-    keys2 = set(data2.keys())
     
-    all_keys = sorted(keys1 | keys2)
+    # Calculate the abstract difference tree
+    diff_tree = calculate_diff(data1, data2)
     
-    lines = ["{"]
-    
-    for key in all_keys:
-        if key in keys1 and key in keys2:
-            if data1[key] == data2[key]:
-                lines.append(f"  {key}: {_stringify(data1[key])}")
-            else:
-                lines.append(f"  - {key}: {_stringify(data1[key])}")
-                lines.append(f"  + {key}: {_stringify(data2[key])}")
-        elif key in keys1:
-            lines.append(f"  - {key}: {_stringify(data1[key])}")
-        elif key in keys2:
-            lines.append(f"  + {key}: {_stringify(data2[key])}")
-            
-    lines.append("}")
-    
-    return "\n".join(lines)
+    # Format the output based on the requested format
+    if format_name == 'stylish':
+        return stylish_format(diff_tree)
+    else:
+        raise ValueError(f"Unsupported format: {format_name}")
