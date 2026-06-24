@@ -1,12 +1,13 @@
 def stylish_format(diff, depth=0):
     """
     Format the abstract diff tree into a stylish string representation.
-    
+
     Args:
-        diff: The abstract diff tree from calculate_diff (dict with keys as field names,
-              values as dicts with 'status', 'old_value', 'new_value', and optionally 'children')
+        diff: The abstract diff tree from calculate_diff (dict with keys
+              as field names, values as dicts with 'status', 'old_value',
+              'new_value', and optionally 'children')
         depth: Current nesting depth (for indentation)
-    
+
     Returns:
         Formatted string representing the differences
     """
@@ -16,7 +17,7 @@ def stylish_format(diff, depth=0):
     for key in sorted(diff.keys()):
         value = diff[key]
         status = value['status']
-        
+
         if status == 'nested':
             # For a nested dictionary, we show the key and then recurse
             lines.append(f"{indent}{key}: {{")
@@ -31,7 +32,7 @@ def stylish_format(diff, depth=0):
             lines.append(f"{indent}+ {key}: {_stringify(value['new_value'])}")
         elif status == 'unchanged':
             lines.append(f"{indent}{key}: {_stringify(value['old_value'])}")
-    
+
     if depth == 0:
         return f"{{\n{'\n'.join(lines)}\n}}"
     else:
