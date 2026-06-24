@@ -1,6 +1,8 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/alexlealch/python-project-174/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/alexlealch/python-project-174/actions)
 [![Python CI](https://github.com/alexlealch/python-project-174/actions/workflows/pyci.yml/badge.svg)](https://github.com/alexlealch/python-project-174/actions)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alexlealch_python-project-174&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=alexlealch_python-project-174)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=alexlealch_python-project-174&metric=coverage)](https://sonarcloud.io/summary/new_code?id=alexlealch_python-project-174)
 
 # Gendiff - Configuration File Difference Finder
 

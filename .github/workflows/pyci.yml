@@ -36,13 +36,9 @@ jobs:
         run: |
           make test
 
-      - name: Run Test Coverage & Publish to CodeClimate
-        uses: paambaati/codeclimate-action@v5.0.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: make test-coverage
-          debug: true
+      - name: Run Test Coverage
+        run: |
+          make test-coverage
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
