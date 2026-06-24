@@ -6,7 +6,7 @@
 
 # Gendiff - Configuration File Difference Finder
 
-Gendiff is a CLI tool that compares two configuration files (JSON or YAML) and displays the differences in a clear, human-readable format.
+Gendiff is a CLI tool and library that compares two configuration files (JSON or YAML) and displays the differences in a clear, human-readable format. It supports recursive nested comparison and multiple output formats.
 
 ## Installation
 
@@ -17,32 +17,58 @@ pip install .
 ## Usage
 
 ### CLI
-Run the tool from the terminal:
+You can run the tool directly from the terminal after installation:
 ```bash
-python -m gendiff.scripts.gendiff file1.json file2.json
-python -m gendiff.scripts.gendiff file1.yaml file2.yaml
-python -m gendiff.scripts.gendiff file1.yml file2.yml
+gendiff file1.json file2.json
 ```
+
+Or using poetry:
+```bash
+poetry run gendiff file1.json file2.json
+```
+
+#### Formatting options
+By default, `gendiff` uses the `stylish` formatter. You can customize the output format with the `--format` or `-f` option:
+
+* **Stylish** (Default):
+  ```bash
+  gendiff --format stylish file1.json file2.json
+  ```
+* **Plain**:
+  ```bash
+  gendiff --format plain file1.json file2.json
+  ```
+* **JSON**:
+  ```bash
+  gendiff --format json file1.json file2.json
+  ```
 
 ### Library
 Use `generate_diff` in your Python code:
 ```python
-from gendiff.src.generate_diff import generate_diff
+from gendiff import generate_diff
 
-diff = generate_diff("file1.json", "file2.json")
+diff = generate_diff("file1.json", "file2.json", format_name="stylish")
 print(diff)
 ```
 
-## Example Output
+## Example Outputs
+
+### Stylish format
 ```
 {
-  - follow: false
-  host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + timeout: 20
-  + verbose: true
+    common: {
+      + follow: false
+        setting1: Value 1
+      - setting2: 200
+    }
 }
+```
+
+### Plain format
+```
+Property 'common.follow' was added with value: false
+Property 'common.setting2' was removed
 ```
 
 ## Demo

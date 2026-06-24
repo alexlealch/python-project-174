@@ -1,6 +1,6 @@
 from .parsers import load_file
 from .core_differ import calculate_diff
-from .formatters import stylish_format
+from .formatters import stylish_format, plain_format, json_format
 
 
 def generate_diff(path1, path2, format_name='stylish'):
@@ -23,5 +23,9 @@ def generate_diff(path1, path2, format_name='stylish'):
     # Format the output based on the requested format
     if format_name == 'stylish':
         return stylish_format(diff_tree)
+    elif format_name == 'plain':
+        return plain_format(diff_tree)
+    elif format_name == 'json':
+        return json_format(diff_tree)
     else:
         raise ValueError(f"Unsupported format: {format_name}")

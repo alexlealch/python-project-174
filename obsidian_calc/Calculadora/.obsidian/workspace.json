@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Paso 7.md",
+                "file": "Paso 9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Paso 7"
+              "title": "Paso 9"
             }
           }
         ]
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Paso 7.md",
+                "file": "Paso 9.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de Paso 7"
+              "title": "Enlaces entrantes de Paso 9"
             }
           },
           {
@@ -129,12 +129,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Paso 7.md",
+                "file": "Paso 9.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Enlaces salientes de Paso 7"
+              "title": "Enlaces salientes de Paso 9"
             }
           },
           {
@@ -172,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Paso 7.md",
+                "file": "Paso 9.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de Paso 7"
+              "title": "Esquema de Paso 9"
             }
           }
         ]
@@ -201,8 +201,11 @@
   },
   "active": "0a9ce7260f2f7ce7",
   "lastOpenFiles": [
-    "Paso 6.md",
+    "Paso 8.md",
+    "Paso 9.md",
+    "Paso 9.md",
     "Paso 7.md",
+    "Paso 6.md",
     "Paso 5.md",
     "Paso 4.md",
     "Paso 3.md",
