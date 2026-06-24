@@ -5,3 +5,21 @@ LESSONS.md
 # Obsidian Vault folders
 obsidian_calc/
 .obsidian/
+
+# Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Testing & Coverage
+.pytest_cache/
+coverage.xml
+.coverage
+htmlcov/
+
+# Build & Distribution
+dist/
+build/
+*.egg-info/
+

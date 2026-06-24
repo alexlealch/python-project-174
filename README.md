@@ -72,4 +72,4 @@ Property 'common.setting2' was removed
 ```
 
 ## Demo
-Check out the tool in action: [https://asciinema.org/a/TzfGcZA8COADhpGg](https://asciinema.org/a/TzfGcZA8COADhpGg)
+Check out the tool in action: [https://asciinema.org/a/7sH9oeJEYosN2BFS](https://asciinema.org/a/7sH9oeJEYosN2BFS)
